@@ -2,9 +2,9 @@
 
 [![Build Status](https://github.com/pactflow/example-provider/actions/workflows/build.yml/badge.svg)](https://github.com/pactflow/example-provider/actions)
 
-[![Can I deploy Status](https://test.pactflow.io/pacticipants/pactflow-example-provider/branches/master/latest-version/can-i-deploy/to-environment/production/badge)](https://test.pactflow.io/pacticipants/pactflow-example-provider/branches/master/latest-version/can-i-deploy/to-environment/production/badge)
+[![Can I deploy Status](https://test.pactflow.io/pacticipants/pactflow-example-provider/branches/main/latest-version/can-i-deploy/to-environment/production/badge)](https://test.pactflow.io/pacticipants/pactflow-example-provider/branches/main/latest-version/can-i-deploy/to-environment/production/badge)
 
-[![pactflow-example-provider/pactflow-example-consumer](https://test.pactflow.io/pacts/provider/pactflow-example-provider/consumer/pactflow-example-consumer/latest/master/badge.svg)](https://test.pactflow.io/pacts/provider/pactflow-example-provider/consumer/pactflow-example-consumer/latest/master)
+[![pactflow-example-provider/pactflow-example-consumer](https://test.pactflow.io/pacts/provider/pactflow-example-provider/consumer/pactflow-example-consumer/latest/main/badge.svg)](https://test.pactflow.io/pacts/provider/pactflow-example-provider/consumer/pactflow-example-consumer/latest/main)
 
 This is an example of a Node provider that uses Pact, [PactFlow](https://pactflow.io) and Github Actions to ensure that it is compatible with the expectations its consumers have of it.
 
@@ -35,7 +35,7 @@ To ensure that a verification is also run whenever a pact changes, we create a w
     * To call the Github API that triggers the build, the webhook uses a bearer token that is stored in a PactFlow secret called `${user.githubToken}`. The secret can be created using the `create_github_token_secret` target, or through the PactFlow UI.
     * The target `ci` runs when the provider has pushed a new commit. It performs the following tasks:
       * Run the isolated tests (including the pact verification tests, which publish the verification results)
-      * If we are on master:
+      * If we are on main:
         * Check if we are safe to deploy to prod using `can-i-deploy` (ie. do we have a succesfully verified pact with the version of the consumer that is currently in production)
         * Deploy (just pretend!)
         * Record the deployed application version in PactFlow so PactFlow knows which version of the provider is in production when the consumer runs `can-i-deploy`.

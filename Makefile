@@ -9,8 +9,8 @@ GIT_COMMIT?=$(shell git rev-parse HEAD)
 GIT_BRANCH?=$(shell git rev-parse --abbrev-ref HEAD)
 ENVIRONMENT?=production
 
-# Only deploy from master (to production env) or test (to test env)
-ifeq ($(GIT_BRANCH),master)
+# Only deploy from main (to production env) or test (to test env)
+ifeq ($(GIT_BRANCH),main)
 	ENVIRONMENT=production
 	DEPLOY_TARGET=deploy
 else
@@ -60,7 +60,7 @@ test:
 deploy: deploy_app record_deployment
 
 no_deploy:
-	@echo "Not deploying as not on master branch"
+	@echo "Not deploying as not on main branch"
 
 can_i_deploy: .env
 	"${PACT_CLI}" broker can-i-deploy --pacticipant ${PACTICIPANT} --version ${GIT_COMMIT} --to-environment ${ENVIRONMENT}

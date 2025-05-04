@@ -3,7 +3,7 @@ name: Trigger update to partners.pactflow.io
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '**.md'
 

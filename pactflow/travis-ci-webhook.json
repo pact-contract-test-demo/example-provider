@@ -1,7 +1,7 @@
 {
   "request": {
     "message": "Triggered by changed pact for ${pactbroker.consumerName} version ${pactbroker.consumerVersionNumber}",
-    "branch":"master",
+    "branch":"main",
     "merge_mode": "deep_merge_append",
     "config": {
       "env": {
