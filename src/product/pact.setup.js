@@ -4,6 +4,8 @@ const Product = require("./product");
 const baseOpts = {
   logLevel: "INFO",
   providerBaseUrl: "http://localhost:8080",
+  pactBrokerUsername: process.env.PACT_BROKER_USERNAME,
+  pactBrokerPassword: process.env.PACT_BROKER_PASSWORD,
   providerVersion: process.env.GIT_COMMIT,
   providerVersionBranch: process.env.GIT_BRANCH, // the recommended way of publishing verification results with the branch property
   verbose: process.env.VERBOSE === "true",
