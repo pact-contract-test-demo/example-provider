@@ -1,5 +1,7 @@
 # Example Provider
 
+See https://docs.pactflow.io/docs/workshops/ci-cd
+
 [![Build Status](https://github.com/pactflow/example-provider/actions/workflows/build.yml/badge.svg)](https://github.com/pactflow/example-provider/actions)
 
 [![Can I deploy Status](https://test.pactflow.io/pacticipants/pactflow-example-provider/branches/main/latest-version/can-i-deploy/to-environment/production/badge)](https://test.pactflow.io/pacticipants/pactflow-example-provider/branches/main/latest-version/can-i-deploy/to-environment/production/badge)
